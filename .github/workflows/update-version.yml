@@ -14,12 +14,22 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       stable_ver: ${{ steps.check_ver.outputs.stable_ver }}
+      result: ${{ steps.check_ver.outputs.result }}
     steps:
       - uses: mogeko/latest-version@93e47a995b0d6f6ecad8103a20f8ae177337a85a
         id: check_ver
         with:
           repo: sethjray/wifiguard
           
+  print: # Just for show the output
+   name: Print the result from check
+   runs-on: ubuntu-latest
+   needs: fetch
+   steps:
+      - run: |
+          echo '${{ needs.check.outputs.stable_ver }}'
+          echo '${{ needs.check.outputs.result }}' | jq '.'
+   
   update-release:
     name: Update Relase Version File
     runs-on: ubuntu-latest
