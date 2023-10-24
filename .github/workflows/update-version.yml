@@ -15,7 +15,7 @@ jobs:
     outputs:
       tag_name: ${{ steps.fetch-latest-release.outputs.tag_name }}
     steps:
-      - uses: thebritican/fetch-latest-release@v1
+      - uses: thebritican/fetch-latest-release@v2.0.0
         id: fetch-latest-release
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
