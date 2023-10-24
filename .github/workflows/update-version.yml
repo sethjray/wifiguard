@@ -18,7 +18,7 @@ jobs:
       - uses: mogeko/latest-version@93e47a995b0d6f6ecad8103a20f8ae177337a85a
         id: check_ver
         with:
-          repo: datalogic/wifiguard
+          repo: sethjray/wifiguard
           
   update-release:
     name: Update Relase Version File
