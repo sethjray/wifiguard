@@ -15,7 +15,7 @@ jobs:
     outputs:
       tag_name: ${{ steps.fetch-latest-release.outputs.tag_name }}
     steps:
-      - uses: cityoflosangeles/fetch-latest-github-release@2.0.3
+      - uses: CityOfLosAngeles/fetch-latest-github-release@v2.0.3
         id: fetch-latest-release
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
