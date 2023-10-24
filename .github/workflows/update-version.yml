@@ -27,8 +27,8 @@ jobs:
    needs: fetch
    steps:
       - run: |
-          echo '${{ needs.check.outputs.stable_ver }}'
-          echo '${{ needs.check.outputs.result }}' | jq '.'
+          echo '${{ needs.fetch.outputs.stable_ver }}'
+          echo '${{ needs.fetch.outputs.result }}' | jq '.'
    
   update-release:
     name: Update Relase Version File
