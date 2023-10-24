@@ -19,14 +19,6 @@ jobs:
         id: fetch-latest-release
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          
-  print: # Just for show the output
-   name: Print the result from check
-   runs-on: ubuntu-latest
-   needs: fetch
-   steps:
-      - run: |
-          echo '${{ needs.fetch.outputs.tag_name }}'
    
   update-release:
     name: Update Relase Version File
